@@ -1,0 +1,17 @@
+<header class="mdl-layout--fixed-header" style="background: lightskyblue">
+    <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Node Blog</span>
+        <div class="mdl-layout-spacer"></div>
+        <% if(session.userId){%>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="/blog/<%= session.username%>"><%= session.username%></a>
+            <a class="mdl-navigation__link" href="/sign-out">Sign out</a>
+        </nav>
+        <%} else {%>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="/sign-up">Sign up</a>
+            <a class="mdl-navigation__link" href="/sign-in">Sign in</a>
+        </nav>
+        <%}%>
+    </div>
+</header>
